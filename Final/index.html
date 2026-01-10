@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Scheels Project</title>
+    <!-- <script src="test.js"></script> -->
+
+    <style>
+    .button {
+    border: 3px solid black;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    }
+
+    .run {background-color: #0aaa04;} /* Green */
+    .reset {background-color: #ba003e;} /* Red */
+
+    .run:hover {
+        background-color: #044402;
+    }
+    .reset:hover {
+        background-color: #630323;
+    }
+    </style>
+
+</head>
+<body>
+    <button class = "button run" title = "Run the Program" onclick="printText()">Run</button>
+    <button class = "button reset" title = "Clear the Results" onclick="resetText()">Reset</button>
+    
+    <p id="text"></p>
+
+    <script>
+        function printText(){
+            // works displays text instantly
+            let text = "";
+            let TLD = ".COM";
+
+            for (let i = 1; i < 101; i++) {
+                if(((i % 3) == 0) && ((i % 5) == 0)) {
+                    text += "SCHEELS" + TLD + "<br>";
+                } else if((i % 3) == 0) {
+                    text += "SCHEELS" + "<br>";
+                } else if ((i % 5) == 0) {
+                    text += TLD + "<br>";
+                } else {
+                    text += i + "<br>";
+                }
+            }
+            document.getElementById("text").innerHTML = text;
+
+
+            //TODO: Display text with time between lines   line-by-line
+            // let text = "";
+            // let TLD = ".COM";
+
+            // for (let i = 1; i < 100; i++) {
+            //     if(((i % 3) == 0) && ((i % 5) == 0)) {
+            //         text += "SCHEELS" + TLD + "<br>";
+            //     } else if((i % 3) == 0) {
+            //         text += "SCHEELS" + "<br>";
+            //     } else if ((i % 5) == 0) {
+            //         text += TLD + "<br>";
+            //     } else {
+            //         text += i + "<br>";
+            //     }
+            //     document.getElementById("text").innerHTML = text;
+            // }
+        }
+
+        function resetText(){
+            const text = document.getElementById("text");
+            text.textContent = "";
+        }
+    </script>
+</body>
+</html>
