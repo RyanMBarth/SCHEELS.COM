@@ -2,7 +2,6 @@
 <html lang="en-US">
 <head>
     <title>Scheels Project</title>
-    <!-- <script src="test.js"></script> -->
 
     <style>
     .button {
@@ -18,8 +17,8 @@
     cursor: pointer;
     }
 
-    .run {background-color: #0aaa04;} /* Green */
-    .reset {background-color: #ba003e;} /* Red */
+    .run {background-color: #0aaa04;}   /* Green Run Button*/
+    .reset {background-color: #ba003e;} /* Red Reset Button*/
 
     .run:hover {
         background-color: #044402;
@@ -31,14 +30,21 @@
 
 </head>
 <body>
-    <button class = "button run" title = "Run the Program" onclick="printText()">Run</button>
-    <button class = "button reset" title = "Clear the Results" onclick="resetText()">Reset</button>
+    <div class= "containter">
+        <img src="Scheels.png" alt="Scheels" width="200" height="100">
+        
+        <div class= "Buttons"> 
+            <button class = "button run" title = "Run the Program" onclick="printText()">Run</button>
+            <button class = "button reset" title = "Clear the Results" onclick="resetText()">Reset</button>
+        </div>
+    </div>
+   
     
     <p id="text"></p>
 
     <script>
         function printText(){
-            // works displays text instantly
+            //Displays text instantly
             let text = "";
             let TLD = ".COM";
 
@@ -55,25 +61,9 @@
             }
             document.getElementById("text").innerHTML = text;
 
-
-            //TODO: Display text with time between lines   line-by-line
-            // let text = "";
-            // let TLD = ".COM";
-
-            // for (let i = 1; i < 100; i++) {
-            //     if(((i % 3) == 0) && ((i % 5) == 0)) {
-            //         text += "SCHEELS" + TLD + "<br>";
-            //     } else if((i % 3) == 0) {
-            //         text += "SCHEELS" + "<br>";
-            //     } else if ((i % 5) == 0) {
-            //         text += TLD + "<br>";
-            //     } else {
-            //         text += i + "<br>";
-            //     }
-            //     document.getElementById("text").innerHTML = text;
-            // }
         }
-
+        
+        //Clears text
         function resetText(){
             const text = document.getElementById("text");
             text.textContent = "";
